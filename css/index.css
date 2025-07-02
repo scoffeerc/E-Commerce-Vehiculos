@@ -1,0 +1,289 @@
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asegura que html y body ocupen el 100% de la altura disponible */
+  font-family: "Roboto", sans-serif; /* Fuente moderna y legible */
+  line-height: 1.6;
+  color: #e0e0e0; /* Color de texto principal para fondo oscuro */
+  background-color: #121212; /* Fondo muy oscuro, casi negro */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura del viewport */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background-color: #1e1e1e; /* Fondo oscuro para el header, ligeramente más claro que el body */
+  padding: 25px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para el fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header .container-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1160px;
+  padding: 0 20px;
+}
+
+.header h1 {
+  font-family: "Montserrat", sans-serif; /* Fuente elegante para el título principal */
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #ffea00; /* Color dorado vibrante para el título */
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); /* Sombra sutil para el texto dorado */
+}
+
+.nav {
+  display: flex;
+  gap: 35px; /* Mayor espacio entre los enlaces */
+}
+
+.nav-link {
+  color: #b0b0b0; /* Color de texto claro para los enlaces */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: #ffea00; /* Color dorado al pasar el ratón */
+  transform: translateY(-3px); /* Efecto de elevación más notorio */
+}
+
+.nav-link .icon {
+  width: 24px; /* Iconos ligeramente más grandes */
+  height: 24px;
+  margin-right: 8px;
+  stroke: currentColor;
+  fill: none;
+}
+
+#contador-carrito {
+  background-color: #ffea00; /* Fondo dorado para el contador del carrito */
+  color: #121212; /* Texto oscuro para el contador */
+  border-radius: 50%;
+  padding: 3px 8px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-left: 5px;
+  vertical-align: super;
+}
+
+#seccion-productos {
+  flex-grow: 1; /* Permite que esta sección crezca y ocupe el espacio restante */
+  padding: 80px 20px; /* Más padding vertical */
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas flexibles */
+  gap: 40px; /* Mayor espacio entre tarjetas */
+}
+
+.seccion-texto {
+  grid-column: 1 / -1; /* Asegura que el contenedor del título ocupe todo el ancho */
+  text-align: center;
+  margin-bottom: 60px; /* Espacio debajo del título */
+}
+
+.seccion-productos h2 {
+  font-family: "Playfair Display", serif; /* Fuente serif elegante para el título de sección */
+  font-size: 4.5em; /* Título de sección muy grande y prominente */
+  color: #ffea00; /* Color dorado para el título */
+  font-weight: 700;
+  letter-spacing: 2px; /* Espaciado de letras para un toque refinado */
+  text-transform: uppercase; /* Convertir a mayúsculas para un look formal */
+  position: relative;
+  display: inline-block; /* Para que los pseudo-elementos se posicionen correctamente */
+  padding-bottom: 15px; /* Espacio para la línea inferior */
+}
+
+.seccion-productos h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px; /* Ancho de la línea */
+  height: 3px; /* Grosor de la línea */
+  background-color: #ffea00; /* Color dorado para la línea */
+  border-radius: 2px;
+}
+
+.tarjeta-producto {
+  background-color: #1e1e1e; /* Fondo oscuro para las tarjetas */
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra más suave y profunda para el fondo oscuro */
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.1); /* Borde sutil dorado */
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-10px); /* Efecto de elevación más notorio */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); /* Sombra más intensa al pasar el ratón */
+}
+
+.tarjeta-producto img {
+  max-width: 100%;
+  height: 250px; /* Altura fija para las imágenes */
+  object-fit: cover;
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+  border: 2px solid rgba(255, 215, 0, 0.2); /* Borde sutil dorado para la imagen */
+}
+
+.tarjeta-producto:hover img {
+  transform: scale(1.05); /* Pequeño zoom en la imagen al pasar el ratón */
+}
+
+.titulo-producto {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #f0f0f0; /* Color de texto claro para el título del producto */
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.tarjeta-producto p {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #ffea00; /* Color dorado para el precio */
+  margin-bottom: 30px;
+}
+
+.tarjeta-producto button {
+  background-color: #ffea00; /* Color dorado para el botón */
+  color: #121212; /* Texto oscuro para el botón */
+  border: none;
+  padding: 14px 30px;
+  border-radius: 10px; /* Bordes redondeados para el botón */
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.tarjeta-producto button:hover {
+  background-color: #ffd700; /* Tono ligeramente más oscuro del dorado al pasar el ratón */
+  transform: translateY(-3px);
+}
+
+/* --- Footer Styles --- */
+.footer {
+  background-color: #0a0a0a; /* Fondo aún más oscuro para el footer */
+  color: #b0b0b0; /* Texto claro para el footer */
+  text-align: center;
+  padding: 35px 0;
+  margin-top: auto; /* Empuja el footer al final si el contenido es corto */
+  font-size: 1em;
+  border-top: 1px solid rgba(255, 215, 0, 0.1); /* Borde superior sutil dorado */
+}
+
+.footer .container-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (min-width: 768px) {
+  .header .container-principal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+  }
+
+  .nav {
+    gap: 50px; /* Más espacio en pantallas grandes */
+  }
+
+  #seccion-productos {
+    padding: 100px 20px; /* Más padding en pantallas grandes */
+  }
+
+  .seccion-productos h2 {
+    font-size: 5.5em; /* Aún más grande en pantallas de escritorio */
+    margin-bottom: 100px; /* Más espacio en pantallas grandes */
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 1em;
+  }
+
+  #seccion-productos {
+    grid-template-columns: 1fr; /* Una sola columna en móviles muy pequeños */
+    padding: 40px 15px;
+    gap: 30px;
+  }
+
+  .seccion-productos h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+  }
+
+  .tarjeta-producto {
+    padding: 25px;
+  }
+
+  .tarjeta-producto img {
+    height: 200px;
+  }
+
+  .titulo-producto {
+    font-size: 1.5em;
+  }
+
+  .tarjeta-producto p {
+    font-size: 1.3em;
+  }
+
+  .tarjeta-producto button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+  }
+}
+
