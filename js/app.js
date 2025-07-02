@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     const renderProductos = () => {
-        url = "https:/dummyjson.com/products/category/vehicle";
+        url = "https://dummyjson.com/products/category/vehicle";
    
 
     fetch(url)
