@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 tarjProduc.classList.add("tarjeta-producto");
 
                 let imgProduc = document.createElement("img");
-                imgProduc.src = elemento.images[1];
+                imgProduc.src = elemento.images[0];
 
                 let titProduc = document.createElement("h3");
                 titProduc.textContent = elemento.title;

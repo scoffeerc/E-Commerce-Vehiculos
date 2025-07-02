@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     const renderProductos = () => {
-        url = "https:/dummyjson.com/products/category/vehicle";
+       let url = ("https://dummyjson.com/products/category/vehicle");
    
 
     fetch(url)
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tarjProduc.classList.add("tarjeta-producto");
 
             let imgProduc  = document.createElement("img");
-            imgProduc.src  = producto.images[1];
+            imgProduc.src  = producto.images[0];
             imgProduc.alt  = producto.description;
 
             let titProduc  = document.createElement("h3");
